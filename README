@@ -1,0 +1,28 @@
+**getenvy** is a LD_PRELOAD library to snoop on ``getenv()`` calls:
+
+.. code:: console
+
+   $ make
+   gcc -W -Wall -O2 -g  -shared -fPIC -ldl getenvy.c -o libgetenvy.so
+   $ export LD_PRELOAD="$PWD/libgetenvy.so"
+   $ GETENVY=1 ls > /dev/null
+   getenv("QUOTING_STYLE")
+   getenv("COLUMNS")
+   getenv("TABSIZE")
+   getenv("LS_BLOCK_SIZE")
+   getenv("BLOCK_SIZE")
+   getenv("BLOCKSIZE")
+   getenv("POSIXLY_CORRECT")
+   getenv("BLOCK_SIZE")
+   getenv("TZ")
+
+I you feel brave, you can install and enable it globally
+(even for setuid/setgid programs):
+
+.. code:: console
+
+   # make install
+   install -D -m 644 libgetenvy.so /usr/local/lib/libgetenvy.so
+   # echo /usr/local/lib/libgetenvy.so >> /etc/ld.so.preload
+
+.. vim:ft=rst ts=3 sts=3 sw=3 et
