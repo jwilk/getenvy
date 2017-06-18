@@ -4,9 +4,15 @@ language: c
 compiler:
 - clang
 - gcc
+addons:
+  apt:
+    packages:
+    - python-docutils
+    - python-pygments
 script:
 - make
 - export LD_PRELOAD="$PWD/libgetenvy.so"
 - GETENVY=1 ls > /dev/null
+- private/check-rst
 
 # vim:ts=2 sts=2 sw=2 et
