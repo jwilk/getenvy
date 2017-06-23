@@ -16,7 +16,7 @@
    getenv("BLOCK_SIZE")
    getenv("TZ")
 
-I you feel brave, you can install and enable it globally
+If you feel brave, you can install and enable it globally
 (even for setuid/setgid programs):
 
 .. code:: console
