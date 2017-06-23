@@ -4,7 +4,7 @@
 INSTALL = install
 CC = gcc
 CFLAGS ?= -O2 -g
-CFLAGS += -W -Wall
+CFLAGS += -Wall -Wextra
 
 PREFIX = /usr/local
 DESTDIR =
