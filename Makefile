@@ -3,7 +3,8 @@
 
 INSTALL = install
 CC = gcc
-CFLAGS = -W -Wall -O2 -g
+CFLAGS ?= -O2 -g
+CFLAGS += -W -Wall
 
 PREFIX = /usr/local
 DESTDIR =
