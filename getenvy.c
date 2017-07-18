@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define _GNU_SOURCE
+#define _GNU_SOURCE /* needed for RTLD_NEXT */
 
 #include <dlfcn.h>
 #include <stdio.h>
