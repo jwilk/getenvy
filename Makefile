@@ -16,7 +16,8 @@ all: libgetenvy.so
 
 .PHONY: install
 install: libgetenvy.so
-	install -D -m 644 $(<) $(DESTDIR)$(libdir)/$(<)
+	install -d $(DESTDIR)$(libdir)
+	install -m 644 $(<) $(DESTDIR)$(libdir)/$(<)
 
 .PHONY: clean
 clean:
