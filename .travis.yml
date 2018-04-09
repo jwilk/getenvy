@@ -7,9 +7,11 @@ compiler:
 addons:
   apt:
     packages:
+    - cppcheck
     - python-docutils
     - python-pygments
 script:
+- cppcheck --error-exitcode=1 *.c
 - make
 - export LD_PRELOAD="$PWD/libgetenvy.so"
 - GETENVY=1 ls > /dev/null
