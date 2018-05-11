@@ -8,8 +8,8 @@ addons:
   apt:
     packages:
     - cppcheck
-    - python-docutils
-    - python-pygments
+install:
+- python -m pip install --user docutils pygments
 script:
 - cppcheck --error-exitcode=1 *.c
 - make
