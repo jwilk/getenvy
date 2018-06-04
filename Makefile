@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: MIT
 
 INSTALL = install
-CC = gcc
 CFLAGS ?= -O2 -g
 CFLAGS += -Wall -Wextra
 
