@@ -28,6 +28,14 @@ clean:
 lib%.so: %.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -fPIC $(<) $(LDLIBS) -o $(@)
 
+.PHONY: test
+test: libgetenvy.so
+	LD_PRELOAD=./$(<) GETENVY=1 ls 2>&1 >/dev/null | grep -w getenv
+
+.PHONY: test-installed
+test-installed:
+	LD_PRELOAD=libgetenvy.so GETENVY=1 ls 2>&1 >/dev/null | grep -w getenv
+
 .error = GNU make is required
 
 # vim:ts=4 sts=4 sw=4 noet
