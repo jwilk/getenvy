@@ -1,4 +1,4 @@
-**getenvy** is a LD_PRELOAD library to snoop on ``getenv()`` calls:
+**getenvy** is an LD_PRELOAD library to snoop on ``getenv()`` calls:
 
 .. code:: console
 
