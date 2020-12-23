@@ -29,7 +29,7 @@ char *getenv(const char *name)
             if (c == '\\' || c == '"')
                 fprintf(stderr, "\\%c", c);
             else if (c < ' ' || c >= 0x7F)
-                fprintf(stderr, "\\x%02x", c);
+                fprintf(stderr, "\\%03o", c);
             else
                 fprintf(stderr, "%c", c);
         }
