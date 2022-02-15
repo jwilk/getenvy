@@ -37,7 +37,7 @@ jobs:
         LD_LIBRARY_PATH: /home/runner/.local/lib
     - name: check README syntax
       run: |
-        python3 -m pip install pygments restructuredtext-lint
+        python3 -m pip install restructuredtext-lint pygments
         rst-lint --level=info --encoding=UTF-8 README
       if: matrix.os != 'ubuntu-18.04'
 
