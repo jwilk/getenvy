@@ -7,7 +7,6 @@ jobs:
     strategy:
       matrix:
         os:
-        - ubuntu-18.04
         - ubuntu-20.04
         - ubuntu-22.04
         cc:
@@ -42,6 +41,5 @@ jobs:
       run: |
         python3 -m pip install restructuredtext-lint pygments
         rst-lint --level=info --encoding=UTF-8 README
-      if: matrix.os != 'ubuntu-18.04'
 
 # vim:ts=2 sts=2 sw=2 et
