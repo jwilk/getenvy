@@ -24,7 +24,7 @@ char *getenv(const char *name)
     if (verbose) {
         const char *p;
         fprintf(stderr, "getenv(\"");
-        for (p=name; *p; p++) {
+        for (p = name; *p; p++) {
             unsigned char c = *p;
             if (c == '\\' || c == '"')
                 fprintf(stderr, "\\%c", c);
